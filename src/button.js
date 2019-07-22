@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import './btn.css'
 
 class btn extends React.Component{
+    static defaultProps = {
+        width:false
+    }
+
     constructor(props){
         super(props);
         this.state = {
@@ -10,7 +14,7 @@ class btn extends React.Component{
 
     render(){
         return(
-            <div className='b_board' onClick={() => {
+            <div className={this.props.width?'w_board':'b_board'} onClick={() => {
                 this.props.click()
 
             }}>
