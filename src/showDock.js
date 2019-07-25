@@ -11,7 +11,7 @@ class show extends React.Component{
     ceshi(){
         console.log('组件内部')
     }
-    render(){
+   render(){
         return(
             <div className='showDock'>
                 {this.props.val}

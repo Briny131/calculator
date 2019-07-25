@@ -1,0 +1,11 @@
+@import '~antd/dist/antd.css';
+
+.input-style{
+    width:100%;
+    height:100%;
+    background:#1890ff;
+    color:white;
+}
+.input-style:active{
+    background:#096dd9
+}

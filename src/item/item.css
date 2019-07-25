@@ -1,0 +1,51 @@
+.urgent{
+    background:#f00;
+}
+.no-urgent{
+    background:#0f0
+}
+.normal{
+    background:#ff0
+}
+.status{
+    height:32px;
+    width:50%;
+    padding:2px 0 2px 0;
+}
+.status-animate{
+    -webkit-animation-name: move-length;
+    -webkit-animation-duration: 0.2s;
+    -webkit-animation-iteration-count: 1; 
+    -webkit-animation-delay: 0s;
+    animation-fill-mode:forwards
+}
+.item-style{
+    line-height:30px;
+    border:1px solid #aaa;
+    overflow:hidden;
+    border-radius:8px;
+    margin-left:30px;
+}
+@keyFrames move-length{
+    0%{width:50%;}
+    50%{width:75%;}
+    100%{width:100%;}
+}
+@keyframes action-scale{
+	0%{transform: scale(0.2);opacity: 0;}
+	100%{ transform: scale(1);opacity: 1;}
+}
+.animate{
+    -webkit-animation-name: action-scale;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: 1; 
+    -webkit-animation-delay: 0s;
+}
+.base-style{
+    text-align: center
+}
+.icon-style{
+    height:32px;
+    line-height:32px;
+    text-align:right;
+}
