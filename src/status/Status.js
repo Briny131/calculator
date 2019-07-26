@@ -1,44 +1,69 @@
 import React from 'react';
 // import Item from './item'
-import {Badge} from 'antd'
+import { Badge } from 'antd'
 import './status.css'
-import Item from '../item/item';
-
-class Status extends React.Component{
-    static defaultProps = {
-        item:[]
-    }
-    constructor(props){
-        super(props)
-        this.state = {
-
+function High(PropComponent) {
+    return class Status extends React.Component {
+        static defaultProps = {
+            item: []
         }
-    }
+        constructor(props) {
+            super(props)
+            this.state = {
+                hidden: false
+            }
+        }
 
+        handleHidden() {
+            this.setState({
+                hidden: !this.state.hidden
+            })
+        }
 
-    render(){
-        return(
-            <div>
-                <Badge count={this.props.item.length}>
-                    <div className="status-style">{this.props.name}</div>
-                </Badge>
-                <div style={{width:"90%"}}>
-                    {this.props.item.map((item,index)=>{
-                        return (
-                        <Item 
-                        key={item.id} 
+        get item() {
+            return this.props.item.sort((a, b) => {
+                return a.status.length - b.status.length
+            }).map((item, index) => {
+                return (
+                    <PropComponent
+                        key={item.id}
                         data={item}
                         onDelete={this.props.onDelete}
                         onChange={this.props.onChange}
                         onChangeValue={this.props.onChangeValue}
-                        ></Item>
-                        )
-                    })}
+                    />
+                )
+            })
+        }
+
+
+        render() {
+            return (
+                <div style={{ margin: '20px' }}>
+                    <Badge count={this.props.item.length}>
+                        <div
+                            className="status-style"
+                            onClick={() => this.handleHidden()}>
+                            {this.props.name}
+                            {this.state.hidden
+                                ?<div id="down-icon"></div> 
+                                :<div id="up-icon"></div>
+                            }
+                        </div>
+                    </Badge>
+                    {this.state.hidden
+                        ? ''
+                        : <div>
+                            {this.item}
+                        </div>
+                    }
+
+
                 </div>
-                
-            </div>
-        )
+            )
+        }
     }
 }
 
-export default Status
+
+export default High

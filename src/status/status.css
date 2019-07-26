@@ -1,7 +1,40 @@
 .status-style{
-    background: #fff;
-    /* border:1px solid #aaa; */
-    height:40px;
-    line-height: 40px;
-    font-size:24px;
+    background: #eee;
+    margin-bottom:1 0px;
+    padding: 10px;
+    border-radius: 4px;
+    height: 40px;
+    line-height: 20px;
+    font-size: 20px;
 }
+
+.status-style:active{
+    background:#ddd
+}
+#down-icon{
+    width: 10px;
+    height: 10px;
+    margin-left:10px;
+    margin-bottom:4px;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+    transform: rotate(45deg);
+    display: inline-block;
+}
+#up-icon{
+    width: 10px;
+    height: 10px;
+    margin-left:10px;
+    margin-top:4px;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+    transform: rotate(-135deg);
+    display: inline-block;
+}
+/* .status-style::after{
+    content: '';
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    right
+} */
