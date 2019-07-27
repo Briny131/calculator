@@ -44,6 +44,9 @@ class ListItem extends React.Component {
     handleChange(e, id) {
         this.props.onChange(this.props.onDelete(id))
     }
+    handleBlur = (e) => {
+        this.setState({modify:false})
+    }
     handlePressEnter(e) {
         // console.log(e.target.value)
         e.persist()
@@ -94,6 +97,7 @@ class ListItem extends React.Component {
                                             allowClear
                                             defaultValue={this.state.content || this.props.data.content}
                                             onPressEnter={(e) => { this.handlePressEnter(e) }}
+                                            onBlur={this.handleBlur}
                                         >
                                         </Input> :
                                         <span
