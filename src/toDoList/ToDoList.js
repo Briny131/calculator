@@ -21,7 +21,7 @@ class ToDoList extends React.Component {
     componentWillMount() {
         let a = window.localStorage
         if (a.item) {
-            this.setState({ item: JSON.parse(a.item), id: +a.id + 1 })
+            this.setState({ item: JSON.parse(a.item), id: +a.id })
 
         }
     }
@@ -124,6 +124,7 @@ class ToDoList extends React.Component {
                     onDelete={(id) => { return this.deleteItem(id, 'done') }}
                     onChange={this.handleChangeStatus}
                     onChangeValue={this.handleChangeValue}></List>
+                <Ceshi placeholder="input search text" style={{ width: 200 }}></Ceshi>
             </div>
         )
     }
