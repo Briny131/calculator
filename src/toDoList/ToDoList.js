@@ -132,8 +132,4 @@ class ToDoList extends React.Component {
 
 export default ToDoList
 
-<<<<<<< Updated upstream
-// git-test stash
-=======
 // master stash
->>>>>>> Stashed changes
