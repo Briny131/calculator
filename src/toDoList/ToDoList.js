@@ -130,10 +130,4 @@ class ToDoList extends React.Component {
     }
 }
 
-<<<<<<< HEAD
 export default ToDoList
-
-// master stash
-=======
-export default ToDoList
->>>>>>> parent of 476b947... fix master
